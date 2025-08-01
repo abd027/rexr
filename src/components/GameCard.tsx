@@ -3,6 +3,7 @@ import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import { getMixer } from "framer-motion";
+import getCroppedImageURL from "../hooks/imageUrls";
 
 interface Props{
     game: Game;
@@ -12,7 +13,7 @@ const GameCard = ({game}:Props) => {
   return (
     <>
      <Card >
-        <Image src={game.background_image}  />
+        <Image src={getCroppedImageURL(game.background_image)}  />
         <CardBody>
             <Heading fontSize="2xl">
                 {game.name}
